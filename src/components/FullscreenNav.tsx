@@ -9,6 +9,7 @@ import useStore from "hooks/useStore";
 import { device } from "utils/device";
 import { useCallback } from "react";
 import { motion } from "framer-motion";
+import { Text } from "./basic";
 
 const Root = styled.div`
   background-color: ${(props) => props.theme.colors.secondaryBg};
@@ -94,6 +95,30 @@ const MenuContainer = styled.div`
   }
 `;
 
+const LanguageBar = styled.div`
+  display: flex;
+`;
+
+const StyledTitle = styled.p`
+  color: black;
+  font-size: 15px;
+  margin: 0 10px;
+`;
+
+const StyledSelect = styled.select`
+  background: inherit;
+  border: none;
+  margin: 0 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+`;
+
+const StyledText = styled.p`
+  font-size: 18px;
+  font-weight: bold;
+`;
+
 type Props = {
   onClose?: () => void;
 };
@@ -124,7 +149,23 @@ const FullscreenNav: React.FC<Props> = ({ onClose }) => {
       <Root>
         <LogoBg src={oxImg} alt="logo" />
         <FlexBox justifyContent="space-between" alignItems="center">
-          <div></div>
+          <LanguageBar>
+            {!store.isTablet && <StyledTitle>Language:</StyledTitle>}
+            <StyledSelect id="lang">
+              <option value="English">
+                <StyledText>{store.isTablet ? "EN" : "English"}</StyledText>
+              </option>
+              <option value="Chinese">
+                <StyledText>{store.isTablet ? "CH" : "Chinese"}</StyledText>
+              </option>
+              <option value="Spanish">
+                <StyledText>{store.isTablet ? "SP" : "Spanish"}</StyledText>
+              </option>
+              <option value="Lao">
+                <StyledText>{store.isTablet ? "Lao" : "Lao"}</StyledText>
+              </option>
+            </StyledSelect>
+          </LanguageBar>
           <Clickable onClick={onClose}>
             <CloseIcon width={16} height={16} fill={theme.colors.bg} />
           </Clickable>
