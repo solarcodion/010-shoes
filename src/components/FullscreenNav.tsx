@@ -9,7 +9,6 @@ import useStore from "hooks/useStore";
 import { device } from "utils/device";
 import { useCallback } from "react";
 import { motion } from "framer-motion";
-import { Text } from "./basic";
 
 const Root = styled.div`
   background-color: ${(props) => props.theme.colors.secondaryBg};
