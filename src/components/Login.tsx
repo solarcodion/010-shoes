@@ -2,6 +2,7 @@ import { FC } from "react";
 import styled from "styled-components";
 import { FaDiscord } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+import { redirect } from "react-router-dom";
 
 const Root = styled.div`
   max-width: 500px;
@@ -38,9 +39,21 @@ const Login: FC = () => {
     <Root>
       <Text>Join the ONX family and get access to our page</Text>
       <ButtonGroup>
-        <FaDiscord size={30} />
+        <FaDiscord
+          size={30}
+          onClick={() => {
+            localStorage.setItem("user", "1");
+            redirect("/");
+          }}
+        />
         <p style={{ margin: 0 }}>OR</p>
-        <MdEmail size={30} />
+        <MdEmail
+          size={30}
+          onClick={() => {
+            localStorage.setItem("user", "1");
+            redirect("/");
+          }}
+        />
       </ButtonGroup>
     </Root>
   );
