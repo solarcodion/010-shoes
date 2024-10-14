@@ -37,29 +37,18 @@ const ButtonGroup = styled.div`
 const Login: FC = () => {
   const navigate = useNavigate();
 
+  const handleComplete = () => {
+    sessionStorage.setItem("user", "1");
+    navigate("/welcome");
+  };
+
   return (
     <Root>
       <Text>Join the ONX family and get access to our page</Text>
       <ButtonGroup>
-        <FaDiscord
-          size={30}
-          cursor={"pointer"}
-          onClick={() => {
-            sessionStorage.setItem("user", "1");
-            console.log("discord: click");
-            navigate("/");
-          }}
-        />
+        <FaDiscord size={30} cursor={"pointer"} onClick={handleComplete} />
         <p style={{ margin: 0 }}>OR</p>
-        <MdEmail
-          size={30}
-          cursor={"pointer"}
-          onClick={() => {
-            sessionStorage.setItem("user", "1");
-            navigate("/");
-            console.log("email: click");
-          }}
-        />
+        <MdEmail size={30} cursor={"pointer"} onClick={handleComplete} />
       </ButtonGroup>
     </Root>
   );
