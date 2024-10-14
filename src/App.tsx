@@ -34,8 +34,14 @@ function App() {
         <DialogProvider>
           <Suspense fallback={<div></div>}>
             <Routes>
-              <Route path="/welcome" element={<WelcomePage />} />
-              <Route path="/login" element={<LoginPage />} />
+              <Route
+                path="/welcome"
+                element={<PrivateRoute element={<WelcomePage />} />}
+              />
+              <Route
+                path="/login"
+                element={<PrivateRoute element={<LoginPage />} />}
+              />
               <Route
                 path=""
                 element={<PrivateRoute element={<NewsPage />} />}
