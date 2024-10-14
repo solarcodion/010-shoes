@@ -2,7 +2,7 @@ import { FC } from "react";
 import styled from "styled-components";
 import { FaDiscord } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
-import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Root = styled.div`
   max-width: 500px;
@@ -35,23 +35,29 @@ const ButtonGroup = styled.div`
 `;
 
 const Login: FC = () => {
+  const navigate = useNavigate();
+
   return (
     <Root>
       <Text>Join the ONX family and get access to our page</Text>
       <ButtonGroup>
         <FaDiscord
           size={30}
+          cursor={"pointer"}
           onClick={() => {
-            localStorage.setItem("user", "1");
-            redirect("/");
+            sessionStorage.setItem("user", "1");
+            console.log("discord: click");
+            navigate("/");
           }}
         />
         <p style={{ margin: 0 }}>OR</p>
         <MdEmail
           size={30}
+          cursor={"pointer"}
           onClick={() => {
-            localStorage.setItem("user", "1");
-            redirect("/");
+            sessionStorage.setItem("user", "1");
+            navigate("/");
+            console.log("email: click");
           }}
         />
       </ButtonGroup>
