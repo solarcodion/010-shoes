@@ -108,17 +108,6 @@ const Benefits = () => {
           </Carousel>
         </SliderContainer>
       ) : (
-        // <ScrollWrapper className="w-full">
-        //   {/* <HScroller> */}
-        //   <Container>
-        //     {benefits.map((v, i) => {
-        //       return (
-        //         <BenefitCard key={`benefit-${i}`} img={benefitImg} text={v} />
-        //       );
-        //     })}
-        //   </Container>
-        //   {/* </HScroller> */}
-        // </ScrollWrapper>
         <div className="w-full">
           <ScrollContainer>
             <Container>
