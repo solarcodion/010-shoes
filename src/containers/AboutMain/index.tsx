@@ -167,10 +167,6 @@ const AboutMain = () => {
   }, [isShow]);
 
   const container = useMemo(() => {
-    // const style: React.CSSProperties | undefined = typeof store.isTablet
-    //   ? { maxWidth: "432px" }
-    //   : undefined;
-
     return (
       <>
         <HScroller>
