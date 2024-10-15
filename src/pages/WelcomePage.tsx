@@ -1,4 +1,5 @@
-import Welcome from "components/Welcome";
+import WelcomeContainer from "containers/Welcome";
+import WithAppbar from "layouts/WithAppbar";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -11,7 +12,11 @@ const WelcomePage = () => {
     }
   });
 
-  return <Welcome />;
+  return (
+    <WithAppbar>
+      <WelcomeContainer />
+    </WithAppbar>
+  );
 };
 
 export default WelcomePage;
