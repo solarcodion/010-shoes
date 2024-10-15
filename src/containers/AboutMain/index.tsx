@@ -71,7 +71,9 @@ const Part1 = styled.div`
   }
 `;
 
-const Img = styled.img``;
+const Img = styled.img`
+  height: calc(100vh - 260px);
+`;
 
 const Part2 = styled.div`
   display: flex;
@@ -101,9 +103,9 @@ const Part3 = styled.div`
   display: grid;
   grid-gap: 14px;
   grid-template-columns: repeat(2, 1fr);
-  img {
-    height: 100%;
-  }
+  // img {
+  //   height: 100%;
+  // }
   @media ${device.tablet} {
     grid-gap: 12px;
     grid-template-columns: repeat(1, 1fr);
