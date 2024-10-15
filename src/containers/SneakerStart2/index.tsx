@@ -1,4 +1,4 @@
-import { PageMarker, PageText } from "components/basic";
+import { PageMarker } from "components/basic";
 import { styled } from "styled-components";
 import { device } from "utils/device";
 import oxImg from "assets/images/sneaker-intro-1.png";
@@ -32,6 +32,16 @@ const LogoBg = styled.img`
   z-index: -1;
   @media ${device.mobile} {
     width: 90%;
+  }
+`;
+
+const PageText = styled.div`
+  font-size: 30px;
+  font-weight: 400;
+  color: ${(props) => props.theme.colors.white};
+
+  @media ${device.mobile} {
+    font-size: 22px;
   }
 `;
 
