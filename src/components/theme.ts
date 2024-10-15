@@ -4,6 +4,7 @@ export const darkTheme = {
   colors: {
     bg: "#0b0b18",
     secondaryBg: "#fef900",
+    text: "#fff",
     white: "#fff",
     black: "#000",
     cyan: "#25fcff",
@@ -19,6 +20,7 @@ export const whiteTheme = {
   colors: {
     bg: "#fff",
     secondaryBg: "#fdf84c",
+    text: "#000",
     white: "#0b0b18",
     black: "#000",
     cyan: "#25fcff",
