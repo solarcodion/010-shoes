@@ -25,7 +25,6 @@ const SneakerDescPage = lazy(() => import("pages/SneakerDescPage"));
 const SneakerDetailPage = lazy(() => import("pages/SneakerDetailPage"));
 const MintPage = lazy(() => import("pages/MintPage"));
 const FaqPage = lazy(() => import("pages/FaqPage"));
-// const PressPage = lazy(() => import("pages/PressPage"));
 const RoadmapPage = lazy(() => import("pages/RoadmapPage"));
 
 function App() {
@@ -75,7 +74,7 @@ function App() {
                   element={<PrivateRoute element={<MintPage />} />}
                 />
               </Route>
-              <Route path="/press">
+              <Route path="/news">
                 <Route
                   path=""
                   element={<PrivateRoute element={<NewsPage />} />}
