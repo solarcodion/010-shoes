@@ -7,7 +7,7 @@ import modelImg from "assets/images/placeholder-model.jpg";
 import { ScrollContainer } from "react-indiana-drag-scroll";
 import { useEffect, useMemo, useState } from "react";
 import useStore from "hooks/useStore";
-import { FiArrowRightCircle } from "react-icons/fi";
+import { AiOutlineDoubleRight } from "react-icons/ai";
 
 const Root = styled.div`
   padding: 130px 0 130px 80px;
@@ -146,7 +146,7 @@ const RightGradient = styled.div`
   }
 `;
 
-const StyledFiArrowRightCircle = styled(FiArrowRightCircle)`
+const StyledAiOutlineDoubleRight = styled(AiOutlineDoubleRight)`
   position: fixed;
   top: 80%;
   left: 90%;
@@ -247,7 +247,7 @@ const AboutMain = () => {
       ) : (
         <>
           <ScrollContainer>{container}</ScrollContainer>
-          {!isShow && <StyledFiArrowRightCircle />}
+          {!isShow && <StyledAiOutlineDoubleRight />}
         </>
       )}
     </Root>
