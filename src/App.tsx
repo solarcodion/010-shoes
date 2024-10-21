@@ -44,7 +44,8 @@ function App() {
                 path="/about"
                 element={<PrivateRoute element={<AboutRoute />} />}
               >
-                <Route path="" element={<AboutPage />} />
+                <Route path="" element={<SneakerStart1Page />} />
+                <Route path="intro" element={<AboutPage />} />
                 <Route path="main" element={<AboutMainPage />} />
                 <Route path="benefits" element={<BenefitsPage />} />
                 <Route path="team" element={<TeamsPage />} />
@@ -54,8 +55,7 @@ function App() {
                 path="/sneaker"
                 element={<PrivateRoute element={<SneakerRoute />} />}
               >
-                <Route path="" element={<SneakerStart1Page />} />
-                <Route path="intro" element={<SneakerStart2Page />} />
+                <Route path="" element={<SneakerStart2Page />} />
                 <Route path="more" element={<SneakerMoreInfoPage />} />
                 <Route path="gallery" element={<SneakerGalleryPage />} />
                 <Route path="desc" element={<SneakerDescPage />} />
