@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { FaTwitter } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { device } from "utils/device";
 
 const Root = styled.div`
   max-width: 500px;
@@ -24,6 +25,11 @@ const Text = styled.p`
   color: black;
   padding: 20px;
   margin: auto 0;
+
+  @media ${device.mobile} {
+    font-size: 15px;
+    padding: 5px;
+  }
 `;
 
 const ButtonGroup = styled.div`
