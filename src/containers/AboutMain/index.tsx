@@ -10,12 +10,12 @@ import useStore from "hooks/useStore";
 import { AiOutlineDoubleRight } from "react-icons/ai";
 
 const Root = styled.div`
-  padding: 130px 0 130px 80px;
+  padding: 130px 80px;
   display: flex;
   align-items: center;
-  overflow-x: "scroll";
   justify-content: flex-start;
   position: relative;
+
   & .text-area {
     min-width: 432px;
   }
@@ -28,6 +28,7 @@ const Root = styled.div`
 `;
 
 const HScroller = styled.div`
+  position: relative;
   display: inline-flex;
   gap: 90px;
   height: calc(100vh - 260px);
@@ -73,6 +74,7 @@ const Part1 = styled.div`
 
 const Img = styled.img`
   height: calc(100vh - 260px);
+  pointer-events: none;
 `;
 
 const Part2 = styled.div`
@@ -103,9 +105,9 @@ const Part3 = styled.div`
   display: grid;
   grid-gap: 14px;
   grid-template-columns: repeat(2, 1fr);
-  // img {
-  //   height: 100%;
-  // }
+  img {
+    min-width: fit-content;
+  }
   @media ${device.tablet} {
     grid-gap: 12px;
     grid-template-columns: repeat(1, 1fr);
@@ -132,7 +134,7 @@ const Part4 = styled.div`
 const RightGradient = styled.div`
   width: 180px;
   height: 100%;
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 0;
   background: linear-gradient(
@@ -153,7 +155,6 @@ const StyledAiOutlineDoubleRight = styled(AiOutlineDoubleRight)`
   transform: translate(-50%, -50%);
   z-index: 10000;
   font-size: 100px;
-  opacity: 0.4;
 `;
 
 const AboutMain = () => {
@@ -190,7 +191,7 @@ const AboutMain = () => {
               invite you to be part of this movement.
             </Text>
           </Part1>
-          <Img src={shoesImg} alt="" />
+          <Img src={shoesImg} alt="shoes image" />
           <Part2>
             <PageTitle>A shoe that holds more than just a foot.</PageTitle>
             <TwoColumn>
@@ -213,8 +214,8 @@ const AboutMain = () => {
             </TwoColumn>
           </Part2>
           <Part3 style={{ gridGap: "14px" }}>
-            <Img src={whiteSneakerImg} alt="" />
-            <Img src={modelImg} alt="" />
+            <Img src={whiteSneakerImg} alt="white sneaker image" />
+            <Img src={modelImg} alt="model image" />
           </Part3>
           <Part4>
             <Text>
@@ -247,7 +248,7 @@ const AboutMain = () => {
       ) : (
         <>
           <ScrollContainer>{container}</ScrollContainer>
-          {!isShow && <StyledAiOutlineDoubleRight />}
+          {!isShow && <StyledAiOutlineDoubleRight color="#fef900" />}
         </>
       )}
     </Root>
