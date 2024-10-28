@@ -76,7 +76,7 @@ const Content = styled.div`
   transform-origin: 0 50%;
   transition: transform 175ms ease-in-out;
 
-  @media ${device.tablet} {
+  @media ${device.mobileM} {
     padding: 14px;
   }
 `;
@@ -86,7 +86,7 @@ const Name = styled.div`
   color: ${(props) => props.theme.colors.bg};
   font-weight: 600;
 
-  @media ${device.tablet} {
+  @media ${device.mobileM} {
     font-size: 16px;
   }
 `;
@@ -95,8 +95,12 @@ const Desc = styled.div`
   font-size: 20px;
   color: ${(props) => props.theme.colors.bg};
 
-  @media ${device.tablet} {
-    font-size: 14px;
+  @media ${device.mobileM} {
+    font-size: 13px;
+  }
+
+  @media ${device.mobile} {
+    font-size: 16px;
   }
 `;
 
