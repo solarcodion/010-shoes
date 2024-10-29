@@ -55,8 +55,8 @@ function App() {
                 path="/sneaker"
                 element={<PrivateRoute element={<SneakerRoute />} />}
               >
-                <Route path="" element={<SneakerStart2Page />} />
-                <Route path="more" element={<SneakerMoreInfoPage />} />
+                <Route path="" element={<SneakerMoreInfoPage />} />
+                <Route path="more" element={<SneakerStart2Page />} />
                 <Route path="gallery" element={<SneakerGalleryPage />} />
                 <Route path="desc" element={<SneakerDescPage />} />
                 <Route path="detail" element={<SneakerDetailPage />} />
