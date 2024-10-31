@@ -20,8 +20,8 @@ export const whiteTheme = {
   colors: {
     bg: "#fff",
     secondaryBg: "#fdf84c",
-    text: "#000",
-    white: "#fff",
+    text: "#fff",
+    white: "#0b0b18",
     black: "#000",
     cyan: "#25fcff",
     cyan010: "#272735",
