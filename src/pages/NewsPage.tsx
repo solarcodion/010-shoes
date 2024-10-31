@@ -11,6 +11,7 @@ const Root = styled.div`
   padding: 130px 80px;
   display: flex;
   flex-direction: column;
+  background: ${(props) => props.theme.colors.bg};
 
   @media ${device.tablet} {
     padding: 74px 28px;
@@ -137,13 +138,13 @@ const Container = styled.div`
 `;
 
 const Text = styled.div`
-  color: ${(props) => props.theme.colors.white};
+  color: ${(props) => props.theme.colors.bg};
   font-weight: 600;
 `;
 
 const NewsPage = () => {
   return (
-    <WithAppbar>
+    <WithAppbar theme="light">
       <Root className="full">
         <Container>
           <Gallery>
