@@ -66,7 +66,9 @@ const Part1 = styled.div`
   }
 `;
 
-const Img = styled.img``;
+const Img = styled.img`
+  pointer-events: none;
+`;
 
 const Part2 = styled.div`
   display: flex;
