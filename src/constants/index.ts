@@ -8,12 +8,12 @@ export const MENU_ITEMS = [
     url: "/sneaker",
   },
   {
-    label: "Mint",
-    url: "/mint",
-  },
-  {
     label: "Chip",
     url: "/chip",
+  },
+  {
+    label: "Mint",
+    url: "/mint",
   },
   {
     label: "Roadmap",
