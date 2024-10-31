@@ -4,8 +4,9 @@ import { device } from "utils/device";
 import shoesImg from "assets/images/placeholder-shoes-dior.jpg";
 import whiteSneakerImg from "assets/images/placeholder-whitesneaker.jpg";
 import { ScrollContainer } from "react-indiana-drag-scroll";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import useStore from "hooks/useStore";
+import { AiOutlineDoubleRight } from "react-icons/ai";
 
 const Root = styled.div`
   padding: 130px 0 130px 80px;
@@ -126,8 +127,26 @@ const RightGradient = styled.div`
   }
 `;
 
+const StyledAiOutlineDoubleRight = styled(AiOutlineDoubleRight)`
+  position: fixed;
+  top: 80%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  font-size: 100px;
+`;
+
 const Mint = () => {
   const { store } = useStore();
+  const [isShow, setIsShow] = useState<boolean>(false);
+
+  useEffect(() => {
+    const toggleIcon = () => {
+      setIsShow(!isShow);
+    };
+
+    setTimeout(toggleIcon, 600);
+  }, [isShow]);
 
   const container = useMemo(() => {
     return (
@@ -187,7 +206,10 @@ const Mint = () => {
       {store.isTablet ? (
         container
       ) : (
-        <ScrollContainer>{container}</ScrollContainer>
+        <>
+          <ScrollContainer>{container}</ScrollContainer>
+          {!isShow && <StyledAiOutlineDoubleRight color="#fef900" />}
+        </>
       )}
     </Root>
   );
