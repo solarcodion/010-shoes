@@ -14,6 +14,7 @@ const Root = styled.div`
   align-items: center;
   justify-content: flex-start;
   position: relative;
+  background: ${(props) => props.theme.colors.bg};
   @media ${device.tablet} {
     padding: 94px 58px;
   }
@@ -111,24 +112,6 @@ const Part3 = styled.div`
   }
 `;
 
-const RightGradient = styled.div`
-  width: 180px;
-  height: 100%;
-  position: fixed;
-  z-index: 100;
-  right: 0;
-  top: 0;
-  background: linear-gradient(
-    89deg,
-    rgba(0, 0, 0, 0.01) 25%,
-    rgba(0, 0, 0, 0.8) 75%
-  );
-
-  @media ${device.tablet} {
-    display: none;
-  }
-`;
-
 const StyledAiOutlineDoubleRight = styled(AiOutlineDoubleRight)`
   position: fixed;
   top: 80%;
@@ -198,7 +181,6 @@ const Mint = () => {
             <Img src={whiteSneakerImg} alt="" />
           </Part3>
         </HScroller>
-        <RightGradient />
       </>
     );
   }, []);
