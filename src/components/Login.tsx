@@ -80,6 +80,7 @@ const Login: FC = () => {
 
   const handleSubmit = () => {
     console.log(email);
+    localStorage.setItem("user", "1");
     navigate("/welcome");
   };
 
