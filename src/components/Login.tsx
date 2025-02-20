@@ -19,6 +19,15 @@ const Root = styled.div`
   justify-content: space-between;
   margin: 20px;
   padding: 40px 60px;
+
+  @media ${device.tablet} {
+    padding: 20px 40px;
+  }
+
+  @media ${device.mobileM} {
+    padding: 20px;
+    margin: 10px;
+  }
 `;
 
 const Header = styled.div`
@@ -48,6 +57,7 @@ const Text = styled.p`
 `;
 
 const EmailInput = styled.input`
+  width: inherit;
   flex: 1;
   border: none;
   outline: none;
