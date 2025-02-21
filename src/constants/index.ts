@@ -9,14 +9,14 @@ export const MENU_ITEMS = [
     label: "Sneaker",
     url: "/sneaker",
   },
-  {
-    label: "Chip",
-    url: "/chip",
-  },
-  {
-    label: "Mint",
-    url: "/mint",
-  },
+  // {
+  //   label: "Chip",
+  //   url: "/chip",
+  // },
+  // {
+  //   label: "Mint",
+  //   url: "/mint",
+  // },
   {
     label: "Roadmap",
     url: "/roadmap",
