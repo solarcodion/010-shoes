@@ -36,7 +36,7 @@ const Footer = () => {
 
   return (
     <Root>
-      <FlexBox alignItems="center" gap="50px">
+      <FlexBox customAlignItems="center" gap="50px">
         {SOCIAL_LINKS.map((link) => {
           return (
             <Link href={link.url} key={link.url} target="_blank">

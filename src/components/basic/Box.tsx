@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 type Props = {
   display?: string;
-  justifyContent?: string;
-  alignItems?: string;
+  customJustifyContent?: string;
+  customAlignItems?: string;
   margin?: string;
   marginTop?: string;
   marginBottom?: string;
@@ -33,9 +33,10 @@ type Props = {
 
 export const Box: React.FC<Props> = styled.div`
   ${({ display }) => display && `display: ${display};`}
-  ${({ justifyContent }) =>
-    justifyContent && `justify-content: ${justifyContent};`}
-  ${({ alignItems }) => alignItems && `align-items: ${alignItems};`}
+  ${({ customJustifyContent }) =>
+    customJustifyContent && `justify-content: ${customJustifyContent};`}
+  ${({ customAlignItems }) =>
+    customAlignItems && `align-items: ${customAlignItems};`}
   ${({ margin }) => margin && `margin: ${margin};`}
   ${({ marginTop }) => marginTop && `margin-top: ${marginTop};`}
   ${({ marginBottom }) => marginBottom && `margin-bottom: ${marginBottom};`}
