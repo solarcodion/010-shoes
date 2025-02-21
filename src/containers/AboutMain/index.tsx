@@ -5,9 +5,9 @@ import shoesImg from "assets/images/placeholder-shoes-dior.jpg";
 import whiteSneakerImg from "assets/images/placeholder-whitesneaker.jpg";
 import modelImg from "assets/images/placeholder-model.jpg";
 import { ScrollContainer } from "react-indiana-drag-scroll";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import useStore from "hooks/useStore";
-import { AiOutlineDoubleRight } from "react-icons/ai";
+import { AiOutlineDoubleRight, AiOutlineDoubleLeft } from "react-icons/ai";
 
 const Root = styled.div`
   padding: 130px 80px;
@@ -145,8 +145,17 @@ const RightGradient = styled.div`
 
 const StyledAiOutlineDoubleRight = styled(AiOutlineDoubleRight)`
   position: fixed;
-  top: 80%;
-  left: 90%;
+  bottom: 5%;
+  right: 0;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  font-size: 100px;
+`;
+
+const StyledAiOutlineDoubleLeft = styled(AiOutlineDoubleLeft)`
+  position: fixed;
+  bottom: 5%;
+  left: 10%;
   transform: translate(-50%, -50%);
   z-index: 10000;
   font-size: 100px;
@@ -170,21 +179,121 @@ const Section = styled.div`
 
 const AboutMain = () => {
   const { store } = useStore();
-  const [isShow, setIsShow] = useState<boolean>(false);
+  const [index, setIndex] = useState(0);
+  const divRef1 = useRef<HTMLDivElement | null>(null);
+  const divRef2 = useRef<HTMLDivElement | null>(null);
+  const divRef3 = useRef<HTMLDivElement | null>(null);
+
+  const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Update index based on which section is visible
+        if (entry.target === divRef1.current) {
+          setIndex(0);
+        } else if (entry.target === divRef2.current) {
+          setIndex(1);
+        } else if (entry.target === divRef3.current) {
+          setIndex(2);
+        }
+      }
+    });
+  };
 
   useEffect(() => {
-    const toggleIcon = () => {
-      setIsShow(!isShow);
-    };
+    const observer = new IntersectionObserver(handleIntersection, {
+      threshold: 0.5,
+    });
 
-    setTimeout(toggleIcon, 600);
-  }, [isShow]);
+    const ref1 = divRef1.current;
+    const ref2 = divRef2.current;
+    const ref3 = divRef3.current;
+
+    if (ref1) observer.observe(ref1);
+    if (ref2) observer.observe(ref2);
+    if (ref3) observer.observe(ref3);
+
+    return () => {
+      if (ref1) observer.unobserve(ref1);
+      if (ref2) observer.unobserve(ref2);
+      if (ref3) observer.unobserve(ref3);
+    };
+  }, []);
+
+  const onClickRight = () => {
+    switch (index + 1) {
+      case 0:
+        if (divRef1.current) {
+          divRef1.current.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "center",
+          });
+        }
+        break;
+
+      case 1:
+        if (divRef2.current) {
+          divRef2.current.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "center",
+          });
+        }
+        break;
+
+      default:
+        if (divRef3.current) {
+          divRef3.current.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "center",
+          });
+        }
+        break;
+    }
+    setIndex(index + 1);
+  };
+
+  const onClickLeft = () => {
+    switch (index - 1) {
+      case 0:
+        if (divRef1.current) {
+          divRef1.current.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "center",
+          });
+        }
+        break;
+
+      case 1:
+        if (divRef2.current) {
+          divRef2.current.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "center",
+          });
+        }
+        break;
+
+      default:
+        if (divRef3.current) {
+          divRef3.current.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "center",
+          });
+        }
+        break;
+    }
+    setIndex(index - 1);
+  };
 
   const container = useMemo(() => {
     return (
       <>
         <HScroller>
-          <Section>
+          <Section ref={divRef1}>
             <Part1 className={store.isTablet ? "" : "text-area"}>
               <PageMarker>About 010 [0-Ten]</PageMarker>
               <PageTitle className="part1-title">
@@ -207,7 +316,7 @@ const AboutMain = () => {
               <Img src={shoesImg} alt="shoes image" />
             </ImgContainer>
           </Section>
-          <Section>
+          <Section ref={divRef2}>
             <Part2>
               <PageTitle>A shoe that holds more than just a foot.</PageTitle>
               <TwoColumn>
@@ -233,7 +342,7 @@ const AboutMain = () => {
               <Img src={whiteSneakerImg} alt="white sneaker image" />
             </ImgContainer>
           </Section>
-          <Section>
+          <Section ref={divRef3}>
             <ImgContainer>
               <Img src={modelImg} alt="model image" />
             </ImgContainer>
@@ -269,7 +378,15 @@ const AboutMain = () => {
       ) : (
         <>
           <ScrollContainer>{container}</ScrollContainer>
-          {!isShow && <StyledAiOutlineDoubleRight color="#fef900" />}
+          {index !== 0 && (
+            <StyledAiOutlineDoubleLeft color="#fef900" onClick={onClickLeft} />
+          )}
+          {index !== 2 && (
+            <StyledAiOutlineDoubleRight
+              color="#fef900"
+              onClick={onClickRight}
+            />
+          )}
         </>
       )}
     </Root>
