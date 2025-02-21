@@ -148,7 +148,7 @@ const FullscreenNav: React.FC<Props> = ({ onClose }) => {
     >
       <Root>
         <LogoBg src={oxImg} alt="logo" />
-        <FlexBox customJustifyContent="space-between" customAlignItems="center">
+        <FlexBox justifyContent="space-between" alignItems="center">
           <LanguageBar>
             {!store.isTablet && <StyledTitle>Language:</StyledTitle>}
             <StyledSelect id="lang">
@@ -183,9 +183,9 @@ const FullscreenNav: React.FC<Props> = ({ onClose }) => {
             );
           })}
         </MenuContainer>
-        <FlexBox customJustifyContent="space-between" customAlignItems="center">
+        <FlexBox justifyContent="space-between" alignItems="center">
           {!store.isMobile && (
-            <FlexBox customAlignItems="center" gap="20px">
+            <FlexBox alignItems="center" gap="20px">
               {SOCIAL_LINKS.map((link) => {
                 return (
                   <ExternalLink href={link.url} key={link.url} target="_blank">
@@ -195,7 +195,7 @@ const FullscreenNav: React.FC<Props> = ({ onClose }) => {
               })}
             </FlexBox>
           )}
-          <FlexBox customAlignItems="center" gap="20px">
+          <FlexBox alignItems="center" gap="20px">
             {FOOTER_LINKS.map((link) => {
               return (
                 <Link to={link.url} key={link.url}>
