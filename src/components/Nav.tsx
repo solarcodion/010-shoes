@@ -110,14 +110,14 @@ const Nav: React.FC<Props> = ({ linkColor }) => {
 
   return (
     <Root>
-      <FlexBox justifyContent="space-between" alignItems="center">
+      <FlexBox customJustifyContent="space-between" customAlignItems="center">
         <Logo
           src={currentTheme === "dark" ? logoImg : logoBlackImg}
           alt="logo"
         />
-        <FlexBox alignItems="center">
+        <FlexBox customAlignItems="center">
           {!store.isMobile && (
-            <FlexBox alignItems="center" gap="20px">
+            <FlexBox customAlignItems="center" gap="20px">
               {MENU_ITEMS.map((link) => {
                 return (
                   <Link

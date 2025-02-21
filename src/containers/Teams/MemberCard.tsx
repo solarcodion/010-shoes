@@ -159,7 +159,7 @@ const MemberCard: React.FC<Props> = ({
             </Name>
             <div>
               <Desc>{desc}</Desc>
-              <FlexBox alignItems="center" gap="12px" marginTop="20px">
+              <FlexBox customAlignItems="center" gap="12px" marginTop="20px">
                 {twitterUrl && (
                   <SocialIcon href={twitterUrl} target="_blank">
                     <FaTwitter />

@@ -96,8 +96,8 @@ const SneakerDesc = () => {
           </Text>
         </Left>
         <FlexBox
-          justifyContent="flex-start"
-          alignItems="center"
+          customAlignItems="flex-start"
+          customJustifyContent="center"
           overflow="hidden"
         >
           <Img src={shoesImg} alt="" />
