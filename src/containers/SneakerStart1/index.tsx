@@ -22,6 +22,7 @@ const Container = styled.div`
   width: 100%;
   gap: 38px;
   width: 100%;
+  align-items: center;
 `;
 
 const LogoBg = styled.img`
@@ -40,7 +41,9 @@ const LogoBg = styled.img`
 
 const Logo = styled.img`
   height: 200px;
+  width: 100%;
   min-width: 300px;
+  max-width: 1536px;
   opacity: 0.8;
   object-fit: cover;
 `;
