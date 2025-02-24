@@ -23,11 +23,11 @@ const Link = styled.a`
   }
 `;
 
-const SocialIcon = styled.img`
-  width: 20px;
-  height: 20px;
-  color: white;
-`;
+// const SocialIcon = styled.img`
+//   width: 20px;
+//   height: 20px;
+//   color: white;
+// `;
 
 const Footer = () => {
   const { store } = useStore();
