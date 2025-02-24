@@ -40,7 +40,7 @@ const Footer = () => {
         {SOCIAL_LINKS.map((link) => {
           return (
             <Link href={link.url} key={link.url} target="_blank">
-              <SocialIcon src={link.icon} alt={link.label} />
+              {/* <SocialIcon src={link.icon} alt={link.label} /> */}
               {link.label}
             </Link>
           );
