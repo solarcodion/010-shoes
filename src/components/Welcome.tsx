@@ -20,8 +20,9 @@ const Container = styled.div`
 `;
 
 const ImgBox = styled.div`
-  width: 40vw;
+  width: 100vw;
   height: 40vh;
+  aspect-ratio: 1/1;
   background-image: url(${image});
   background-repeat: no-repeat;
   background-position: center;
