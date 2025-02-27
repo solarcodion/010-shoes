@@ -147,7 +147,7 @@ const Login: FC = () => {
 
   return (
     <Root>
-      <Text>Join the ONX family and get access to our page</Text>
+      <Text>Onyx to 010</Text>
       <ButtonGroup>
         <RiTwitterXFill size={30} color="gray" cursor={"pointer"} />
         <p style={{ margin: 0 }}>OR</p>
