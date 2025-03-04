@@ -39,9 +39,10 @@ const Container = styled.div`
 const Left = styled.div`
   display: flex;
   flex-direction: column;
-  width: 30vw;
+  width: 35vw;
   min-width: 30vw;
   align-self: center;
+  padding-left: 24px;
 
   & .left-title {
     margin-top: 36px;
